@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.js"],"names":["cc","console","log","hh"],"mappings":";;AAAA,IAAMA,EAAE,GAAC,IAAT;AACAC,OAAO,CAACC,GAAR,CAAYF,EAAZ;AAGA,IAAMG,EAAE,GAAC,IAAT","sourcesContent":["const cc='aa';\r\nconsole.log(cc)\r\n\r\n\r\nconst hh='cc'"],"file":"index.js"}
