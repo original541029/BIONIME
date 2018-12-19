@@ -34,7 +34,7 @@ function table() {
 
     for (var _j = 0; _j < objKeyDataLen + 1; _j++) {
       if (_j == 2) {
-        strTbody += "<td class=\"d-flex delete\"><div class=\"model-btn mr-2 cursor-potion\"><i class=\"fas fa-users\"></div></i><div class=\" cursor-potion text-danger\" data-num=\"".concat(i, "\">X</div></td>");
+        strTbody += "<td class=\"d-flex \"><div class=\"model-btn mr-2 cursor-potion\" data-toggle=\"modal\" data-target=\"#myModal\"><i class=\"fas fa-users\"></div></i><div class=\"cursor-potion text-danger delete\" data-num=\"".concat(i, "\">X</div></td>");
       } else {
         strTbody += "<td>".concat(data[i][objKeyData[_j]], "</td>");
       }
