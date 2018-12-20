@@ -27,7 +27,8 @@ body {
   outline: 0.2em solid; }
 
 .input {
-  border-style: none; }
+  border-style: none;
+  outline: 0.2em solid white; }
 
 ul li {
   float: left; }
