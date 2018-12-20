@@ -1,3 +1,3 @@
 # BIONIME
 
-https://original541029.github.io/BIONIME/src/view/index.html
+https://original541029.github.io/BIONIME/src/view/site-add.html
