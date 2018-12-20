@@ -6,6 +6,14 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+function addZero(i) {
+  if (i < 10) {
+    i = "0" + i;
+  }
+
+  return i;
+}
+
 var CreateData =
 /*#__PURE__*/
 function () {
@@ -20,7 +28,7 @@ function () {
       var yyyy = date.getFullYear();
       var mm = (date.getMonth() + 1 < 10 ? "0" : "") + (date.getMonth() + 1);
       var dd = (date.getDate() < 10 ? "0" : "") + date.getDate();
-      var today = "".concat(yyyy, "/").concat(mm, "/").concat(dd, "  ").concat(date.getHours(), ":").concat(date.getMinutes(), ":").concat(date.getSeconds());
+      var today = "".concat(yyyy, "/").concat(mm, "/").concat(dd, "  ").concat(addZero(date.getHours()), ":").concat(addZero(date.getMinutes()), ":").concat(addZero(date.getSeconds()));
       return today;
     }
   }, {
@@ -148,6 +156,8 @@ function () {
               str += "<option data-num=".concat(i, ">").concat(data[i][objKeyData[j]], "</option>");
             } else if (sitName == data[i][objKeyData[j]] && act == 'add') {
               str += "<option data-num=".concat(i, ">").concat(data[i][objKeyData[j]], "</option>");
+            } else if (act == "removeAll") {
+              str += "<option data-num=".concat(i, ">").concat(data[i][objKeyData[j]], "</option>");
             }
           }
         }
@@ -174,6 +184,10 @@ function () {
         var str = '';
 
         if ($(elm).val() == null) {
+          return;
+        }
+
+        if (addArea == '.add-select-area' && $('.add-select-area>option').length == 1) {
           return;
         }
 

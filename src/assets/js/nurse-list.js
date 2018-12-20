@@ -1,11 +1,13 @@
 window.onload = function () {
   table();
+
 }
 
 
-let nurseData = JSON.parse(localStorage.getItem("nurseList")) || null;
+
 
 function table() {
+  let nurseData = JSON.parse(localStorage.getItem("nurseList")) || null;
   $('.table').remove();
   if (nurseData == null) {
     return
@@ -32,10 +34,11 @@ function table() {
               let tempObj = {
                 "員工編號": nurseData[i][objKeyData[j]]["員工編號"],
                 "護士姓名": nurseData[i][objKeyData[j]]["護士姓名"],
-                "siteName": nurseData[i]["name"]
+                "siteName": nurseData[i]["name"],
+                "placeNum": i
               }
-              let name = JSON.stringify(tempObj).replace(/\"/g, "'");
-              strTbody += `<td class="d-flex"><div onclick="nurseView(${name})" class="model-btn mr-2 cursor-potion"><i class="fas fa-users"></div></i><div class="cursor-potion text-danger delete" data-num="${i}">X</div></td>`
+              let obj = JSON.stringify(tempObj).replace(/\"/g, "'");
+              strTbody += `<td class="d-flex"><div onclick="nurseView(${obj})" class="model-btn mr-2 cursor-potion"><i class="fas fa-users"></div></i><div class="cursor-potion text-danger delete" data-num="${i}">X</div></td>`
 
             } else {
 
@@ -70,6 +73,7 @@ function table() {
 }
 
 function removeRow() {
+  let nurseData = JSON.parse(localStorage.getItem("nurseList")) || null;
   $('.delete').click((e) => {
     var num = e.target.dataset.num;
     nurseData.splice(num, 1);
@@ -95,9 +99,9 @@ function nurseView(obj) {
   let dataLen = data.length;
   let objKeyDataLen = objKeyData.length;
   let strAdd = ``;
-  strAdd += ForLoops.selectArea(data, objKeyData, dataLen, objKeyDataLen, str, obj["siteName"],'add')
+  strAdd += ForLoops.selectArea(data, objKeyData, dataLen, objKeyDataLen, str, obj["siteName"], 'add')
   let str = ``;
-  str += ForLoops.selectArea(data, objKeyData, dataLen, objKeyDataLen, str, obj["siteName"],'remove')
+  str += ForLoops.selectArea(data, objKeyData, dataLen, objKeyDataLen, str, obj["siteName"], 'remove')
   let addSelectArea = document.createElement('select');
   addSelectArea.setAttribute('class', 'add-select-area')
   addSelectArea.setAttribute('size', '8')
@@ -122,4 +126,17 @@ function nurseView(obj) {
   ActEvent.clickBtn('.add-btn', '.add-select-area', '.remove-select-area', '.remove-select-area > option')
   ActEvent.clickBtn('.remove-btn', '.remove-select-area', '.add-select-area', '.add-select-area > option')
 
+  addEvent(obj["placeNum"]);
+}
+
+function addEvent(num) {
+  console.log(num)
+  let dataNurse = JSON.parse(localStorage.getItem("nurseList")) || [];
+  $('.save-btn').click(() => {
+    console.log(dataNurse)
+    dataNurse[num]["name"] = $('.add-select-area>option').text()
+    dataNurse[num]["員工"]["加入時間"] = CreateData.newDate();
+    localStorage.setItem("nurseList", JSON.stringify(dataNurse));
+    table();
+  })
 }

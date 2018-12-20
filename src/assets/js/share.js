@@ -1,10 +1,16 @@
+function addZero(i) {
+  if (i < 10) {
+    i = "0" + i;
+  }
+  return i;
+}    
 class CreateData {
   static newDate() {
     let date = new Date();
     let yyyy = date.getFullYear();
     let mm = (date.getMonth() + 1 < 10 ? "0" : "") + (date.getMonth() + 1);
     let dd = (date.getDate() < 10 ? "0" : "") + date.getDate();
-    let today = `${yyyy}/${mm}/${dd}  ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+    let today = `${yyyy}/${mm}/${dd}  ${addZero(date.getHours())}:${addZero(date.getMinutes())}:${addZero(date.getSeconds())}`;
     return today;
   }
   static localStorage(type, data, strClean) {
@@ -54,18 +60,20 @@ class combinationElm {
 
 
 class ForLoops {
-  static selectArea(data, objKeyData, dataLen, objKeyDataLen, str, sitName,act) {
+  static selectArea(data, objKeyData, dataLen, objKeyDataLen, str, sitName, act) {
     for (let i = 0; i < dataLen; i++) {
       for (let j = 0; j < objKeyDataLen; j++) {
         if (objKeyData[j] == "name") {
           // console.log(sitName+'__'+data[i][objKeyData[j]])
-          if (sitName != data[i][objKeyData[j]] && act=='remove') {
+          if (sitName != data[i][objKeyData[j]] && act == 'remove') {
             console.log(data[i][objKeyData[j]])
             str += `<option data-num=${i}>${data[i][objKeyData[j]]}</option>`;
-          }else if(sitName == data[i][objKeyData[j]] && act=='add'){
+          } else if (sitName == data[i][objKeyData[j]] && act == 'add') {
+            str += `<option data-num=${i}>${data[i][objKeyData[j]]}</option>`;
+          } else if (act == "removeAll") {
             str += `<option data-num=${i}>${data[i][objKeyData[j]]}</option>`;
           }
-     
+
         }
       }
     }
@@ -79,6 +87,9 @@ class ActEvent {
     $(btn).click(() => {
       let str = '';
       if ($(elm).val() == null) {
+        return
+      }
+      if (addArea == '.add-select-area' && $('.add-select-area>option').length == 1) {
         return
       }
       let selectOptionAll = document.querySelectorAll(elmSub);

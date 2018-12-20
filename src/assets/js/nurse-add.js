@@ -16,7 +16,7 @@ function setSelectOption() {
   let dataLen = data.length;
   let objKeyDataLen = objKeyData.length;
   let str = ``;
-  str += ForLoops.selectArea(data, objKeyData, dataLen, objKeyDataLen, str)
+  str += ForLoops.selectArea(data, objKeyData, dataLen, objKeyDataLen, str,'','removeAll')
 
   let addSelectArea = document.createElement('select');
   addSelectArea.setAttribute('class', 'add-select-area')

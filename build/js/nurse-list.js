@@ -4,9 +4,8 @@ window.onload = function () {
   table();
 };
 
-var nurseData = JSON.parse(localStorage.getItem("nurseList")) || null;
-
 function table() {
+  var nurseData = JSON.parse(localStorage.getItem("nurseList")) || null;
   $('.table').remove();
 
   if (nurseData == null) {
@@ -35,10 +34,13 @@ function table() {
               var tempObj = {
                 "員工編號": nurseData[i][objKeyData[j]]["員工編號"],
                 "護士姓名": nurseData[i][objKeyData[j]]["護士姓名"],
-                "siteName": nurseData[i]["name"]
+                "siteName": nurseData[i]["name"],
+                "placeNum": i
               };
-              var name = JSON.stringify(tempObj).replace(/\"/g, "'");
-              strTbody += "<td class=\"d-flex\"><div onclick=\"nurseView(".concat(name, ")\" class=\"model-btn mr-2 cursor-potion\"><i class=\"fas fa-users\"></div></i><div class=\"cursor-potion text-danger delete\" data-num=\"").concat(i, "\">X</div></td>");
+
+              var _obj = JSON.stringify(tempObj).replace(/\"/g, "'");
+
+              strTbody += "<td class=\"d-flex\"><div onclick=\"nurseView(".concat(_obj, ")\" class=\"model-btn mr-2 cursor-potion\"><i class=\"fas fa-users\"></div></i><div class=\"cursor-potion text-danger delete\" data-num=\"").concat(i, "\">X</div></td>");
             } else {
               strTbody += "<td>".concat(nurseData[i][objKeyData[j]][obj[k]], "</td>");
             }
@@ -67,6 +69,7 @@ function table() {
 }
 
 function removeRow() {
+  var nurseData = JSON.parse(localStorage.getItem("nurseList")) || null;
   $('.delete').click(function (e) {
     var num = e.target.dataset.num;
     nurseData.splice(num, 1);
@@ -120,5 +123,18 @@ function nurseView(obj) {
   selectGroup.appendChild(removeSelectArea);
   ActEvent.clickBtn('.add-btn', '.add-select-area', '.remove-select-area', '.remove-select-area > option');
   ActEvent.clickBtn('.remove-btn', '.remove-select-area', '.add-select-area', '.add-select-area > option');
+  addEvent(obj["placeNum"]);
+}
+
+function addEvent(num) {
+  console.log(num);
+  var dataNurse = JSON.parse(localStorage.getItem("nurseList")) || [];
+  $('.save-btn').click(function () {
+    console.log(dataNurse);
+    dataNurse[num]["name"] = $('.add-select-area>option').text();
+    dataNurse[num]["員工"]["加入時間"] = CreateData.newDate();
+    localStorage.setItem("nurseList", JSON.stringify(dataNurse));
+    table();
+  });
 }
 //# sourceMappingURL=nurse-list.js.map

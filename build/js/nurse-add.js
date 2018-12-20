@@ -16,7 +16,7 @@ function setSelectOption() {
   var dataLen = data.length;
   var objKeyDataLen = objKeyData.length;
   var str = "";
-  str += ForLoops.selectArea(data, objKeyData, dataLen, objKeyDataLen, str);
+  str += ForLoops.selectArea(data, objKeyData, dataLen, objKeyDataLen, str, '', 'removeAll');
   var addSelectArea = document.createElement('select');
   addSelectArea.setAttribute('class', 'add-select-area');
   addSelectArea.setAttribute('size', '8');
