@@ -3,10 +3,10 @@ window.onload = function () {
 }
 
 let data = JSON.parse(localStorage.getItem("siteList")) || null;
+let nurseData = JSON.parse(localStorage.getItem("nurseList")) || null;
 
 function table() {
   $('.table').remove();
-  console.log(data)
   if (data == null) {
     return
   }
@@ -15,7 +15,7 @@ function table() {
 
   let objKeyData = Object.keys(data[0])
   let dataLen = data.length;
-  let objKeyLen = objKeyData.length;
+  let objKeyLen = objKeyData.length + 1;
 
   let strTbody = '';
   strTbody += combinationElm.nestedLoops(data, objKeyData, dataLen, objKeyLen, strTbody)
@@ -45,10 +45,63 @@ function removeRow() {
 }
 
 function nurseView(name) {
+  $('.model-table').remove();
+  $('#myModal').modal('show')
   $('.site-name').remove();
   let elmSiteName = document.createElement('p');
   elmSiteName.setAttribute('class', 'site-name');
   elmSiteName.innerText = name;
   let siteNameArea = document.querySelector('.site-name-area');
   siteNameArea.appendChild(elmSiteName);
+
+  if (nurseData == null) {
+    return
+  }
+
+
+  let ary = ['員工編號', '加入時間']
+  let strThead = combinationElm.elmLoop(ary, 'tr', 'th');
+  let objKeyData = Object.keys(nurseData[0])
+  const dataLen = nurseData.length;
+  const objKeyLen = objKeyData.length;
+
+  let strTbody = `<tr>`;
+  for (let i = 0; i < dataLen; i++) {
+
+    for (let j = 0; j < objKeyLen; j++) {
+
+      if (j == 2) {
+      
+        let siteName = nurseData[i][objKeyData[0]];
+        if (siteName == name) {
+          console.log(siteName)
+          console.log(i)
+          let obj = Object.keys(nurseData[i][objKeyData[j]]);
+          const objLen = obj.length;
+          for (let k = 0; k < objLen; k++) {
+            if (k != 1) {
+              strTbody += `<td>${nurseData[i][objKeyData[j]][obj[k]]}</td>`
+            }
+          }
+          strTbody += '</tr>'
+        }
+  
+      }
+
+
+    }
+
+  }
+
+
+  let thead = document.createElement('thead');
+  let tbody = document.createElement('tbody');
+  let table = document.createElement('table');
+  table.setAttribute('class', 'table model-table')
+  thead.innerHTML = strThead;
+  tbody.innerHTML = strTbody;
+  table.appendChild(thead);
+  table.appendChild(tbody);
+  let modalBody = document.querySelector('.modal-body');
+  modalBody.appendChild(table)
 }

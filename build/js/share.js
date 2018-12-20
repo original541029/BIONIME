@@ -110,10 +110,10 @@ function () {
       for (var i = 0; i < dataLen; i++) {
         strTbody += "<tr>";
 
-        for (var j = 0; j < objKeyLen + 1; j++) {
+        for (var j = 0; j < objKeyLen; j++) {
           if (j == 2) {
             var strSiteName = JSON.stringify(data[i]["name"]).replace(/\"/g, "'");
-            strTbody += "<td class=\"d-flex\"><div onclick=\"nurseView(".concat(strSiteName, ")\" class=\"model-btn mr-2 cursor-potion\" data-toggle=\"modal\" data-target=\"#myModal\"><i class=\"fas fa-users\"></div></i><div class=\"cursor-potion text-danger delete\" data-num=\"").concat(i, "\">X</div></td>");
+            strTbody += "<td class=\"d-flex\"><div onclick=\"nurseView(".concat(strSiteName, ")\" class=\"model-btn mr-2 cursor-potion\"><i class=\"fas fa-users\"></div></i><div class=\"cursor-potion text-danger delete\" data-num=\"").concat(i, "\">X</div></td>");
           } else {
             strTbody += "<td>".concat(data[i][objKeyData[j]], "</td>");
           }

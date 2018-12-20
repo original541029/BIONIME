@@ -37,10 +37,10 @@ class combinationElm {
   static nestedLoops(data, objKeyData, dataLen, objKeyLen, strTbody) {
     for (let i = 0; i < dataLen; i++) {
       strTbody += `<tr>`;
-      for (let j = 0; j < (objKeyLen + 1); j++) {
+      for (let j = 0; j < objKeyLen; j++) {
         if (j == 2) {
           let strSiteName = JSON.stringify(data[i]["name"]).replace(/\"/g, "'");
-          strTbody += `<td class="d-flex"><div onclick="nurseView(${strSiteName})" class="model-btn mr-2 cursor-potion" data-toggle="modal" data-target="#myModal"><i class="fas fa-users"></div></i><div class="cursor-potion text-danger delete" data-num="${i}">X</div></td>`
+          strTbody += `<td class="d-flex"><div onclick="nurseView(${strSiteName})" class="model-btn mr-2 cursor-potion"><i class="fas fa-users"></div></i><div class="cursor-potion text-danger delete" data-num="${i}">X</div></td>`
         } else {
           strTbody += `<td>${data[i][objKeyData[j]]}</td>`
         }

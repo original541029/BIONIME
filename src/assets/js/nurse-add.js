@@ -59,7 +59,7 @@ function setSelectOption() {
   let removeSelectArea = document.createElement('select');
   removeSelectArea.setAttribute('class', 'remove-select-area')
   removeSelectArea.setAttribute('size', '8')
-  addSelectArea.innerHTML += str;
+  removeSelectArea.innerHTML += str;
   let selectGroup = document.querySelector('.select-group');
   let addBtn = document.createElement('button');
   addBtn.setAttribute('type', 'button');
@@ -73,16 +73,16 @@ function setSelectOption() {
   selectGroup.appendChild(addBtn);
   selectGroup.appendChild(removeBtn);
   selectGroup.appendChild(removeSelectArea);
-  ActEvent.clickBtn('.add-btn', '.remove-select-area', '.add-select-area', '.add-select-area > option')
-  ActEvent.clickBtn('.remove-btn', '.add-select-area', '.remove-select-area', '.remove-select-area > option')
+  ActEvent.clickBtn('.add-btn', '.add-select-area', '.remove-select-area', '.remove-select-area > option')
+  ActEvent.clickBtn('.remove-btn', '.remove-select-area', '.add-select-area', '.add-select-area > option')
 }
-let dataNurseList = JSON.parse(localStorage.getItem("nurseList")) || [];
-
 function addEvent() {
+  let dataNurse = JSON.parse(localStorage.getItem("nurseList")) || [];
+
   $('.nurse-add-btn').click(() => {
     verification.blank('.number', '員工編號');
     verification.blank('.nurse-name', '護士姓名');
-    let addOpt = document.querySelectorAll('.remove-select-area>option')
+    let addOpt = document.querySelectorAll('.add-select-area>option')
     const len = addOpt.length;
     console.log(data)
     for (let i = 0; i < len; i++) {
@@ -95,8 +95,8 @@ function addEvent() {
       }
       
       var updatedDate = Object.assign(data[addOpt[i].dataset.num], tempObj);
-      // dataNurseList.push(updatedDate)
-      // localStorage.setItem("nurseList", JSON.stringify(dataNurseList));
+      dataNurse.push(updatedDate)
+      localStorage.setItem("nurseList", JSON.stringify(dataNurse));
 
       console.log(updatedDate)
     }
