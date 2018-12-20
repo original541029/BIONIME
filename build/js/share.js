@@ -122,11 +122,77 @@ function () {
         strTbody += '</tr>';
       }
 
-      console.log(strTbody);
       return strTbody;
     }
   }]);
 
   return combinationElm;
+}();
+
+var ForLoops =
+/*#__PURE__*/
+function () {
+  function ForLoops() {
+    _classCallCheck(this, ForLoops);
+  }
+
+  _createClass(ForLoops, null, [{
+    key: "selectArea",
+    value: function selectArea(data, objKeyData, dataLen, objKeyDataLen, str, sitName, act) {
+      for (var i = 0; i < dataLen; i++) {
+        for (var j = 0; j < objKeyDataLen; j++) {
+          if (objKeyData[j] == "name") {
+            // console.log(sitName+'__'+data[i][objKeyData[j]])
+            if (sitName != data[i][objKeyData[j]] && act == 'remove') {
+              console.log(data[i][objKeyData[j]]);
+              str += "<option data-num=".concat(i, ">").concat(data[i][objKeyData[j]], "</option>");
+            } else if (sitName == data[i][objKeyData[j]] && act == 'add') {
+              str += "<option data-num=".concat(i, ">").concat(data[i][objKeyData[j]], "</option>");
+            }
+          }
+        }
+      }
+
+      return str;
+    }
+  }]);
+
+  return ForLoops;
+}();
+
+var ActEvent =
+/*#__PURE__*/
+function () {
+  function ActEvent() {
+    _classCallCheck(this, ActEvent);
+  }
+
+  _createClass(ActEvent, null, [{
+    key: "clickBtn",
+    value: function clickBtn(btn, addArea, elm, elmSub) {
+      $(btn).click(function () {
+        var str = '';
+
+        if ($(elm).val() == null) {
+          return;
+        }
+
+        var selectOptionAll = document.querySelectorAll(elmSub);
+        var selectOptionAllLen = selectOptionAll.length;
+
+        for (var i = 0; i < selectOptionAllLen; i++) {
+          if ($(elm).val() == selectOptionAll[i].text) {
+            selectOptionAll[i].remove();
+            var dataNum = selectOptionAll[i].dataset.num;
+            str += "<option data-num=\"".concat(dataNum, "\">").concat(selectOptionAll[i].text, "</option>");
+            var removeSelectArea = document.querySelector(addArea);
+            removeSelectArea.innerHTML += str;
+          }
+        }
+      });
+    }
+  }]);
+
+  return ActEvent;
 }();
 //# sourceMappingURL=share.js.map

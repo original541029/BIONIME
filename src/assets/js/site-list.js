@@ -53,12 +53,9 @@ function nurseView(name) {
   elmSiteName.innerText = name;
   let siteNameArea = document.querySelector('.site-name-area');
   siteNameArea.appendChild(elmSiteName);
-
   if (nurseData == null) {
     return
   }
-
-
   let ary = ['員工編號', '加入時間']
   let strThead = combinationElm.elmLoop(ary, 'tr', 'th');
   let objKeyData = Object.keys(nurseData[0])

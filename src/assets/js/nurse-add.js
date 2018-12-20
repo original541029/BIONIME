@@ -2,44 +2,9 @@ window.onload = function () {
   setSelectOption();
   addEvent();
 }
-class ForLoops {
-  static selectArea(data, objKeyData, dataLen, objKeyDataLen, str) {
-    for (let i = 0; i < dataLen; i++) {
-      for (let j = 0; j < objKeyDataLen; j++) {
-        if (objKeyData[j] == "name") {
-          str += `<option data-num=${i}>${data[i][objKeyData[j]]}</option>`;
-        }
-      }
-    }
-    return str;
-  }
 
-}
 
-class ActEvent {
-  static clickBtn(btn, addArea, elm, elmSub) {
-    $(btn).click(() => {
-      let str = '';
-      if ($(elm).val() == null) {
-        return
-      }
-      let selectOptionAll = document.querySelectorAll(elmSub);
-      let selectOptionAllLen = selectOptionAll.length;
-      for (let i = 0; i < selectOptionAllLen; i++) {
-        if ($(elm).val() == selectOptionAll[i].text) {
-          selectOptionAll[i].remove();
-          let dataNum = selectOptionAll[i].dataset.num;
-          str += `<option data-num="${dataNum}">${selectOptionAll[i].text}</option>`
-          let removeSelectArea = document.querySelector(addArea);
-          removeSelectArea.innerHTML += str;
-        }
 
-      }
-    })
-
-  }
-
-}
 let data = JSON.parse(localStorage.getItem("siteList")) || null;
 
 function setSelectOption() {
@@ -100,5 +65,7 @@ function addEvent() {
 
       console.log(updatedDate)
     }
+    $('.number').val('')
+    $('.nurse-name').val('')
   })
 }

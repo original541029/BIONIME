@@ -47,8 +47,52 @@ class combinationElm {
       }
       strTbody += '</tr>'
     }
-    console.log(strTbody)
     return strTbody;
- 
+
+  }
+}
+
+
+class ForLoops {
+  static selectArea(data, objKeyData, dataLen, objKeyDataLen, str, sitName,act) {
+    for (let i = 0; i < dataLen; i++) {
+      for (let j = 0; j < objKeyDataLen; j++) {
+        if (objKeyData[j] == "name") {
+          // console.log(sitName+'__'+data[i][objKeyData[j]])
+          if (sitName != data[i][objKeyData[j]] && act=='remove') {
+            console.log(data[i][objKeyData[j]])
+            str += `<option data-num=${i}>${data[i][objKeyData[j]]}</option>`;
+          }else if(sitName == data[i][objKeyData[j]] && act=='add'){
+            str += `<option data-num=${i}>${data[i][objKeyData[j]]}</option>`;
+          }
+     
+        }
+      }
+    }
+    return str;
+  }
+
+}
+
+class ActEvent {
+  static clickBtn(btn, addArea, elm, elmSub) {
+    $(btn).click(() => {
+      let str = '';
+      if ($(elm).val() == null) {
+        return
+      }
+      let selectOptionAll = document.querySelectorAll(elmSub);
+      let selectOptionAllLen = selectOptionAll.length;
+      for (let i = 0; i < selectOptionAllLen; i++) {
+        if ($(elm).val() == selectOptionAll[i].text) {
+          selectOptionAll[i].remove();
+          let dataNum = selectOptionAll[i].dataset.num;
+          str += `<option data-num="${dataNum}">${selectOptionAll[i].text}</option>`
+          let removeSelectArea = document.querySelector(addArea);
+          removeSelectArea.innerHTML += str;
+        }
+
+      }
+    })
   }
 }
