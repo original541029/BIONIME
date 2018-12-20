@@ -1,6 +1,7 @@
 window.onload = function () {
   table();
 }
+
 let data = JSON.parse(localStorage.getItem("siteList")) || null;
 
 function table() {
@@ -10,33 +11,14 @@ function table() {
     return
   }
   let aryHead = ['站點', '修改時間', '動作'];
+  let strThead = combinationElm.elmLoop(aryHead, 'tr', 'th');
+
   let objKeyData = Object.keys(data[0])
-
-  let aryHeadLen = aryHead.length;
   let dataLen = data.length;
-  let objKeyDataLen = objKeyData.length;
-  let strThead = '<tr>';
-
-
-  for (let j = 0; j < aryHeadLen; j++) {
-    strThead += `<th>${aryHead[j]}</th>`
-  }
-  strThead += '</tr>'
-  console.log(strThead)
+  let objKeyLen = objKeyData.length;
 
   let strTbody = '';
-  for (let i = 0; i < dataLen; i++) {
-    strTbody += `<tr>`;
-    for (let j = 0; j < (objKeyDataLen + 1); j++) {
-      if (j == 2) {
-        strTbody += `<td class="d-flex "><div class="model-btn mr-2 cursor-potion" data-toggle="modal" data-target="#myModal"><i class="fas fa-users"></div></i><div class="cursor-potion text-danger delete" data-num="${i}">X</div></td>`
-      } else {
-        strTbody += `<td>${data[i][objKeyData[j]]}</td>`
-      }
-    }
-    strTbody += '</tr>'
-  }
-  console.log(strTbody)
+  strTbody += combinationElm.nestedLoops(data, objKeyData, dataLen, objKeyLen, strTbody)
 
   let thead = document.createElement('thead');
   let tbody = document.createElement('tbody');
@@ -60,4 +42,13 @@ function removeRow() {
     localStorage.setItem("siteList", JSON.stringify(data));
     table();
   })
+}
+
+function nurseView(name) {
+  $('.site-name').remove();
+  let elmSiteName = document.createElement('p');
+  elmSiteName.setAttribute('class', 'site-name');
+  elmSiteName.innerText = name;
+  let siteNameArea = document.querySelector('.site-name-area');
+  siteNameArea.appendChild(elmSiteName);
 }

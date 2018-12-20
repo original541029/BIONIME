@@ -15,35 +15,12 @@ function table() {
   }
 
   var aryHead = ['站點', '修改時間', '動作'];
+  var strThead = combinationElm.elmLoop(aryHead, 'tr', 'th');
   var objKeyData = Object.keys(data[0]);
-  var aryHeadLen = aryHead.length;
   var dataLen = data.length;
-  var objKeyDataLen = objKeyData.length;
-  var strThead = '<tr>';
-
-  for (var j = 0; j < aryHeadLen; j++) {
-    strThead += "<th>".concat(aryHead[j], "</th>");
-  }
-
-  strThead += '</tr>';
-  console.log(strThead);
+  var objKeyLen = objKeyData.length;
   var strTbody = '';
-
-  for (var i = 0; i < dataLen; i++) {
-    strTbody += "<tr>";
-
-    for (var _j = 0; _j < objKeyDataLen + 1; _j++) {
-      if (_j == 2) {
-        strTbody += "<td class=\"d-flex \"><div class=\"model-btn mr-2 cursor-potion\" data-toggle=\"modal\" data-target=\"#myModal\"><i class=\"fas fa-users\"></div></i><div class=\"cursor-potion text-danger delete\" data-num=\"".concat(i, "\">X</div></td>");
-      } else {
-        strTbody += "<td>".concat(data[i][objKeyData[_j]], "</td>");
-      }
-    }
-
-    strTbody += '</tr>';
-  }
-
-  console.log(strTbody);
+  strTbody += combinationElm.nestedLoops(data, objKeyData, dataLen, objKeyLen, strTbody);
   var thead = document.createElement('thead');
   var tbody = document.createElement('tbody');
   var table = document.createElement('table');
@@ -67,5 +44,14 @@ function removeRow() {
     localStorage.setItem("siteList", JSON.stringify(data));
     table();
   });
+}
+
+function nurseView(name) {
+  $('.site-name').remove();
+  var elmSiteName = document.createElement('p');
+  elmSiteName.setAttribute('class', 'site-name');
+  elmSiteName.innerText = name;
+  var siteNameArea = document.querySelector('.site-name-area');
+  siteNameArea.appendChild(elmSiteName);
 }
 //# sourceMappingURL=site-list.js.map

@@ -1,5 +1,3 @@
-const cc='aa';
-console.log(cc)
+window.onload = function () {
 
-
-const hh='cc'
+}

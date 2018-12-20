@@ -1,6 +1,4 @@
 "use strict";
 
-var cc = 'aa';
-console.log(cc);
-var hh = 'cc';
+window.onload = function () {};
 //# sourceMappingURL=index.js.map
