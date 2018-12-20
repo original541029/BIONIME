@@ -1,4 +1,39 @@
 .cursor-potion {
   cursor: pointer; }
 
+.w-30 {
+  width: 30%; }
+
+.outline-white {
+  outline: 0.2em solid white; }
+
+.mt-9 {
+  margin-top: 9em; }
+
+.bg-dark-orange {
+  background-color: #dc7116; }
+
+.mt-7 {
+  margin-top: 7em; }
+
+body {
+  font-family: Microsoft JhengHei; }
+
+body {
+  background: url("http://all4desktop.com/data_images/original/4222091-hd-desktop-blue.jpg") no-repeat fixed;
+  background-size: cover; }
+
+.input-name {
+  outline: 0.2em solid; }
+
+.input {
+  border-style: none; }
+
+ul li {
+  float: left; }
+
+ul a {
+  padding: 2em;
+  margin: 2em; }
+
 /*# sourceMappingURL=site-add.css.map */

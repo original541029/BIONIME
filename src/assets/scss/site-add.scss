@@ -1,1 +1,20 @@
-@import 'all.scss'
+@import 'all.scss';
+body{
+  background: url('http://all4desktop.com/data_images/original/4222091-hd-desktop-blue.jpg')no-repeat  fixed;
+  background-size: cover;
+}
+.input-name{
+  outline: 0.2em solid;
+}
+.input{
+  border-style: none;
+}
+ul{
+  li {
+    float: left;
+  }
+  a{
+    padding: 2em;
+    margin: 2em;
+  }
+}
