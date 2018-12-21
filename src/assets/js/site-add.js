@@ -22,6 +22,13 @@ function addEvent() {
       }
       data.push(tempObj)
       CreateData.localStorage('siteList', data, '.input');
+      let pNotify = document.querySelectorAll('.ui-pnotify')
+      if (pNotify[0]) {
+        return
+      }
+      new PNotify({
+        title: `新增成功`
+      });
     }
   });
 }

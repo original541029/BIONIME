@@ -48,9 +48,11 @@ function nurseView(name) {
   $('.model-table').remove();
   $('#myModal').modal('show')
   $('.site-name').remove();
-  let elmSiteName = document.createElement('p');
+  let elmSiteName = document.createElement('input');
   elmSiteName.setAttribute('class', 'site-name');
-  elmSiteName.innerText = name;
+  elmSiteName.setAttribute('type', 'text');
+  elmSiteName.setAttribute('disabled', 'disabled');
+  elmSiteName.value = name;
   let siteNameArea = document.querySelector('.site-name-area');
   siteNameArea.appendChild(elmSiteName);
   if (nurseData == null) {
@@ -77,7 +79,7 @@ function nurseView(name) {
           const objLen = obj.length;
           for (let k = 0; k < objLen; k++) {
             if (k != 1) {
-              strTbody += `<td>${nurseData[i][objKeyData[j]][obj[k]]}</td>`
+              strTbody += `<td class="text-white">${nurseData[i][objKeyData[j]][obj[k]]}</td>`
             }
           }
           strTbody += '</tr>'

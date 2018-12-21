@@ -1,2 +1,66 @@
+.cursor-potion {
+  cursor: pointer; }
+
+.w-30 {
+  width: 30%; }
+
+.outline-white {
+  outline: 0.2em solid white; }
+
+.mt-9 {
+  margin-top: 9em; }
+
+.bg-dark-orange {
+  background-color: #dc7116; }
+
+.mt-7 {
+  margin-top: 7em; }
+
+.border-transparent {
+  border-color: transparent; }
+
+.bg-transparent {
+  background-color: transparent; }
+
+.w-8 {
+  width: 8em; }
+
+.w-23 {
+  width: 23.3em; }
+
+.w-24 {
+  width: 24em; }
+
+.pt-10 {
+  padding-top: 10em; }
+
+.table {
+  background-color: #ffffff3b; }
+
+thead {
+  background-color: #ffffff5e; }
+
+.table thead th {
+  border-bottom: 2px solid transparent;
+  border-top: 1px solid transparent; }
+
+.table td, .table th {
+  border-top: unset; }
+
+body {
+  background: url("http://all4desktop.com/data_images/original/4222091-hd-desktop-blue.jpg") no-repeat fixed;
+  background-size: cover;
+  font-family: Microsoft JhengHei; }
+
+body {
+  background: url("http://all4desktop.com/data_images/original/4222091-hd-desktop-blue.jpg") no-repeat fixed;
+  background-size: cover; }
+
+input {
+  border-style: none;
+  border: 0.1em solid white; }
+
+.card {
+  border: none; }
 
 /*# sourceMappingURL=nurse-add.css.map */

@@ -1,1 +1,15 @@
 
+@import 'all.scss';
+body{
+  background: url('http://all4desktop.com/data_images/original/4222091-hd-desktop-blue.jpg')no-repeat  fixed;
+  background-size: cover;
+}
+input{
+  border-style: none;
+  border: 0.1em solid white;
+}
+
+.card{
+
+  border: none;
+}

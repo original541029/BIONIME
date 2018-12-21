@@ -101,11 +101,11 @@ function nurseView(obj) {
   var str = "";
   str += ForLoops.selectArea(data, objKeyData, dataLen, objKeyDataLen, str, obj["siteName"], 'remove');
   var addSelectArea = document.createElement('select');
-  addSelectArea.setAttribute('class', 'add-select-area');
+  addSelectArea.setAttribute('class', 'add-select-area w-8');
   addSelectArea.setAttribute('size', '8');
   addSelectArea.innerHTML += strAdd;
   var removeSelectArea = document.createElement('select');
-  removeSelectArea.setAttribute('class', 'remove-select-area');
+  removeSelectArea.setAttribute('class', 'remove-select-area w-8');
   removeSelectArea.setAttribute('size', '8');
   removeSelectArea.innerHTML += str;
   var selectGroup = document.querySelector('.select-group');

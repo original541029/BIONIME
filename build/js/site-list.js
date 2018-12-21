@@ -50,9 +50,11 @@ function nurseView(name) {
   $('.model-table').remove();
   $('#myModal').modal('show');
   $('.site-name').remove();
-  var elmSiteName = document.createElement('p');
+  var elmSiteName = document.createElement('input');
   elmSiteName.setAttribute('class', 'site-name');
-  elmSiteName.innerText = name;
+  elmSiteName.setAttribute('type', 'text');
+  elmSiteName.setAttribute('disabled', 'disabled');
+  elmSiteName.value = name;
   var siteNameArea = document.querySelector('.site-name-area');
   siteNameArea.appendChild(elmSiteName);
 
@@ -80,7 +82,7 @@ function nurseView(name) {
 
           for (var k = 0; k < objLen; k++) {
             if (k != 1) {
-              strTbody += "<td>".concat(nurseData[i][objKeyData[j]][obj[k]], "</td>");
+              strTbody += "<td class=\"text-white\">".concat(nurseData[i][objKeyData[j]][obj[k]], "</td>");
             }
           }
 

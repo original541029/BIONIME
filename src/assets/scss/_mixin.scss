@@ -16,3 +16,37 @@
 .mt-7{
   margin-top:7em;
 }
+.border-transparent{
+  border-color: transparent;
+}
+.bg-transparent{
+  background-color: transparent;
+}
+.w-8{
+  width:8em;
+}
+.w-23{
+  width: 23.3em;
+}
+.w-24{
+  width: 24em;
+}
+.pt-10{
+  padding-top: 10em;
+}
+
+
+
+.table{
+  background-color: #ffffff3b;
+}
+thead{
+  background-color: #ffffff5e;
+}
+.table thead th{
+  border-bottom: 2px solid transparent;
+  border-top: 1px solid transparent;
+}
+.table td, .table th{
+  border-top:unset;
+}

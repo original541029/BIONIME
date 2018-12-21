@@ -103,11 +103,11 @@ function nurseView(obj) {
   let str = ``;
   str += ForLoops.selectArea(data, objKeyData, dataLen, objKeyDataLen, str, obj["siteName"], 'remove')
   let addSelectArea = document.createElement('select');
-  addSelectArea.setAttribute('class', 'add-select-area')
+  addSelectArea.setAttribute('class', 'add-select-area w-8')
   addSelectArea.setAttribute('size', '8')
   addSelectArea.innerHTML += strAdd;
   let removeSelectArea = document.createElement('select');
-  removeSelectArea.setAttribute('class', 'remove-select-area')
+  removeSelectArea.setAttribute('class', 'remove-select-area w-8')
   removeSelectArea.setAttribute('size', '8')
   removeSelectArea.innerHTML += str;
   let selectGroup = document.querySelector('.select-group');

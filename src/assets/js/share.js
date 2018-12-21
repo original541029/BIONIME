@@ -21,9 +21,14 @@ class CreateData {
 }
 class verification {
   static blank(elm, str) {
+    $('.ui-pnotify').remove();
     for (let i = 0; i < $(`${elm}`).length; i++) {
       let elmInput = document.querySelectorAll(`${elm}`);
+      console.log(elm)
+      console.log(elmInput)
       if (!elmInput[i].value) {
+    
+        console.log(elmInput[i].value)
         let pNotify = document.querySelectorAll('.ui-pnotify')
         if (pNotify[i]) {
           return
@@ -35,8 +40,6 @@ class verification {
         }
       }
     }
-
-
   }
 }
 
@@ -100,7 +103,15 @@ class ActEvent {
         return
       }
       if (addArea == '.add-select-area' && $('.add-select-area>option').length == 1) {
-        return
+          let pNotify = document.querySelectorAll('.ui-pnotify')
+          if (pNotify[0]) {
+            return
+          } else {
+            new PNotify({
+              title: `只能加入一個站點`
+            });
+            return
+          }
       }
       let selectOptionAll = document.querySelectorAll(elmSub);
       let selectOptionAllLen = selectOptionAll.length;

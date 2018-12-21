@@ -19,20 +19,25 @@
     <button type="button" class="btn btn-primary return mr-1">
       <a href="site-add.html" class="text-white">返回</a>
     </button>
-    <button type="button" class="btn btn-primary nurse-add-btn">新增</button>
   </div>
-
-  <div class="input-group-prepend">
-    <span class="input-group-text">員工編號</span>
-    <input type="text" class="form-control number require-option">
+  <div class="container-fluid pt-10">
+    <div class="card d-flex justify-content-center flex-column bg-transparent">
+        <div class="input-group-prepend d-flex justify-content-center">
+            <input type="text" class="number require-option bg-transparent w-23" placeholder="請輸入員工編號">
+          </div>
+          <div class="input-group-prepend d-flex justify-content-center">
+            <input type="text" class="nurse-name require-option bg-transparent w-23" placeholder="請輸入護士姓名">
+          </div>
+          <form class="select-group d-flex justify-content-center">
+          </form>
+          <div class="btn-area d-flex justify-content-center">
+                <button type="button" class="font-weight-bold btn w-23 btn-outline-light nurse-add-btn text-center">新增</button>
+      
+          </div>
+    </div>
+    
+  
   </div>
-  <div class="input-group-prepend">
-    <span class="input-group-text">護士姓名</span>
-    <input type="text" class="form-control nurse-name require-option">
-  </div>
-  <form class="select-group">
-  </form>
-
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"

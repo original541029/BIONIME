@@ -19,10 +19,10 @@ function setSelectOption() {
   str += ForLoops.selectArea(data, objKeyData, dataLen, objKeyDataLen, str, '', 'removeAll')
 
   let addSelectArea = document.createElement('select');
-  addSelectArea.setAttribute('class', 'add-select-area require-option')
+  addSelectArea.setAttribute('class', 'add-select-area border-transparent w-8');
   addSelectArea.setAttribute('size', '8')
   let removeSelectArea = document.createElement('select');
-  removeSelectArea.setAttribute('class', 'remove-select-area')
+  removeSelectArea.setAttribute('class', 'remove-select-area border-transparent w-8 ')
   removeSelectArea.setAttribute('size', '8')
   removeSelectArea.innerHTML += str;
   let selectGroup = document.querySelector('.select-group');
@@ -33,7 +33,7 @@ function setSelectOption() {
   let removeBtn = document.createElement('button');
   removeBtn.setAttribute('type', 'button');
   removeBtn.innerText = '移除';
-  removeBtn.setAttribute('class', "btn btn-primary remove-btn");
+  removeBtn.setAttribute('class', "btn btn-secondary remove-btn");
   selectGroup.appendChild(addSelectArea);
   selectGroup.appendChild(addBtn);
   selectGroup.appendChild(removeBtn);
@@ -46,20 +46,19 @@ function addEvent() {
   let dataNurse = JSON.parse(localStorage.getItem("nurseList")) || [];
 
   $('.nurse-add-btn').click(() => {
-    verification.blank('.require-option', ['輸入員工編號', '輸入護士姓名','加入站點']);
-    verification.blank('.add-select-area', ['加入站點']);
-    // if ($('.add-select-area>option').length == 0) {
-    //   let pNotify = document.querySelectorAll('.ui-pnotify')
-    //   if (pNotify[0]) {
-    //     return
-    //   } else {
-    //     new PNotify({
-    //       title: `請加入站點`
-    //     });
-    //     return
-    //   }
+    verification.blank('.require-option', ['輸入員工編號', '輸入護士姓名']);
+    if ($('.add-select-area>option').length == 0) {
+      let pNotify = document.querySelectorAll('.ui-pnotify')
+      if (pNotify[0]) {
+        return
+      } else {
+        new PNotify({
+          title: `請加入站點`
+        });
+        return
+      }
 
-    // }
+    }
     let addOpt = document.querySelectorAll('.add-select-area>option')
     const len = addOpt.length;
     console.log(data)
@@ -75,7 +74,13 @@ function addEvent() {
       var updatedDate = Object.assign(data[addOpt[i].dataset.num], tempObj);
       dataNurse.push(updatedDate)
       localStorage.setItem("nurseList", JSON.stringify(dataNurse));
-
+      let pNotify = document.querySelectorAll('.ui-pnotify')
+      if (pNotify[0]) {
+        return
+      }
+      new PNotify({
+        title: `新增成功`
+      });
       console.log(updatedDate)
     }
 

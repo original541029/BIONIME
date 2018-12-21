@@ -24,6 +24,15 @@ function addEvent() {
       };
       data.push(tempObj);
       CreateData.localStorage('siteList', data, '.input');
+      var pNotify = document.querySelectorAll('.ui-pnotify');
+
+      if (pNotify[0]) {
+        return;
+      }
+
+      new PNotify({
+        title: "\u65B0\u589E\u6210\u529F"
+      });
     }
   });
 }

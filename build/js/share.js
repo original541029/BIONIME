@@ -63,10 +63,15 @@ function () {
   _createClass(verification, null, [{
     key: "blank",
     value: function blank(elm, str) {
+      $('.ui-pnotify').remove();
+
       for (var i = 0; i < $("".concat(elm)).length; i++) {
         var elmInput = document.querySelectorAll("".concat(elm));
+        console.log(elm);
+        console.log(elmInput);
 
         if (!elmInput[i].value) {
+          console.log(elmInput[i].value);
           var pNotify = document.querySelectorAll('.ui-pnotify');
 
           if (pNotify[i]) {
@@ -199,7 +204,16 @@ function () {
         }
 
         if (addArea == '.add-select-area' && $('.add-select-area>option').length == 1) {
-          return;
+          var pNotify = document.querySelectorAll('.ui-pnotify');
+
+          if (pNotify[0]) {
+            return;
+          } else {
+            new PNotify({
+              title: "\u53EA\u80FD\u52A0\u5165\u4E00\u500B\u7AD9\u9EDE"
+            });
+            return;
+          }
         }
 
         var selectOptionAll = document.querySelectorAll(elmSub);
