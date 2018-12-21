@@ -130,11 +130,21 @@ function addEvent(num) {
   console.log(num);
   var dataNurse = JSON.parse(localStorage.getItem("nurseList")) || [];
   $('.save-btn').click(function () {
-    console.log(dataNurse);
+    var initData = dataNurse[num]["name"];
     dataNurse[num]["name"] = $('.add-select-area>option').text();
     dataNurse[num]["員工"]["加入時間"] = CreateData.newDate();
     localStorage.setItem("nurseList", JSON.stringify(dataNurse));
     table();
+    var pNotify = document.querySelectorAll('.ui-pnotify');
+
+    if (pNotify[0] || initData == $('.add-select-area>option').text()) {
+      return;
+    } else {
+      new PNotify({
+        title: "\u4FEE\u6539\u6210\u529F"
+      });
+      return;
+    }
   });
 }
 //# sourceMappingURL=nurse-list.js.map
