@@ -44,8 +44,7 @@ function setSelectOption() {
 function addEvent() {
   var dataNurse = JSON.parse(localStorage.getItem("nurseList")) || [];
   $('.nurse-add-btn').click(function () {
-    verification.blank('.number', '員工編號');
-    verification.blank('.nurse-name', '護士姓名');
+    verification.blank('input', ['員工編號', '護士姓名']);
     var addOpt = document.querySelectorAll('.add-select-area>option');
     var len = addOpt.length;
     console.log(data);
@@ -63,9 +62,6 @@ function addEvent() {
       localStorage.setItem("nurseList", JSON.stringify(dataNurse));
       console.log(updatedDate);
     }
-
-    $('.number').val('');
-    $('.nurse-name').val('');
   });
 }
 //# sourceMappingURL=nurse-add.js.map

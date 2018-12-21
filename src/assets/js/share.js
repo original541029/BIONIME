@@ -1,16 +1,16 @@
-function addZero(i) {
-  if (i < 10) {
-    i = "0" + i;
-  }
-  return i;
-}    
 class CreateData {
+  static addZero(i) {
+    if (i < 10) {
+      i = "0" + i;
+    }
+    return i;
+  }
   static newDate() {
     let date = new Date();
     let yyyy = date.getFullYear();
     let mm = (date.getMonth() + 1 < 10 ? "0" : "") + (date.getMonth() + 1);
     let dd = (date.getDate() < 10 ? "0" : "") + date.getDate();
-    let today = `${yyyy}/${mm}/${dd}  ${addZero(date.getHours())}:${addZero(date.getMinutes())}:${addZero(date.getSeconds())}`;
+    let today = `${yyyy}/${mm}/${dd}  ${CreateData.addZero(date.getHours())}:${CreateData.addZero(date.getMinutes())}:${CreateData.addZero(date.getSeconds())}`;
     return today;
   }
   static localStorage(type, data, strClean) {
@@ -21,12 +21,22 @@ class CreateData {
 }
 class verification {
   static blank(elm, str) {
-    if (!$(elm).val()) {
-      new PNotify({
-        title: `請輸入${str}`
-      });
-      return
+    for (let i = 0; i < $(`${elm}`).length; i++) {
+      let elmInput = document.querySelectorAll('input');
+      if (!elmInput[i].value) {
+        let pNotify = document.querySelectorAll('.ui-pnotify')
+        if (pNotify[i]) {
+          return
+        } else {
+          new PNotify({
+            title: `請輸入${str[i]}`
+          });
+          return
+        }
+      }
     }
+
+
   }
 }
 

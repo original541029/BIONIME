@@ -45,8 +45,7 @@ function addEvent() {
   let dataNurse = JSON.parse(localStorage.getItem("nurseList")) || [];
 
   $('.nurse-add-btn').click(() => {
-    verification.blank('.number', '員工編號');
-    verification.blank('.nurse-name', '護士姓名');
+    verification.blank('input', ['員工編號','護士姓名']);
     let addOpt = document.querySelectorAll('.add-select-area>option')
     const len = addOpt.length;
     console.log(data)
@@ -65,7 +64,6 @@ function addEvent() {
 
       console.log(updatedDate)
     }
-    $('.number').val('')
-    $('.nurse-name').val('')
+
   })
 }

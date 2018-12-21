@@ -5,7 +5,7 @@ window.onload = function () {
 function addEvent() {
   let data = JSON.parse(localStorage.getItem("siteList")) || [];
   $('.site-add-btn').click(() => {
-    verification.blank('.input', `站點名稱`)
+    verification.blank('input', [`站點名稱`])
     let tempObj = {
       name: $('.input').val(),
       date: CreateData.newDate()
@@ -15,7 +15,7 @@ function addEvent() {
   })
   $('.input').keyup(() => {
     if (event.keyCode === 13) {
-      verification.blank('.input', `站點名稱`)
+      verification.blank('input', [`站點名稱`])
       let tempObj = {
         name: $('.input').val(),
         date: CreateData.newDate()

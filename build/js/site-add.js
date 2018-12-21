@@ -7,7 +7,7 @@ window.onload = function () {
 function addEvent() {
   var data = JSON.parse(localStorage.getItem("siteList")) || [];
   $('.site-add-btn').click(function () {
-    verification.blank('.input', "\u7AD9\u9EDE\u540D\u7A31");
+    verification.blank('input', ["\u7AD9\u9EDE\u540D\u7A31"]);
     var tempObj = {
       name: $('.input').val(),
       date: CreateData.newDate()
@@ -17,7 +17,7 @@ function addEvent() {
   });
   $('.input').keyup(function () {
     if (event.keyCode === 13) {
-      verification.blank('.input', "\u7AD9\u9EDE\u540D\u7A31");
+      verification.blank('input', ["\u7AD9\u9EDE\u540D\u7A31"]);
       var tempObj = {
         name: $('.input').val(),
         date: CreateData.newDate()

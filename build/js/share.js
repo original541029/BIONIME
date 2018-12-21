@@ -6,14 +6,6 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-function addZero(i) {
-  if (i < 10) {
-    i = "0" + i;
-  }
-
-  return i;
-}
-
 var CreateData =
 /*#__PURE__*/
 function () {
@@ -22,13 +14,22 @@ function () {
   }
 
   _createClass(CreateData, null, [{
+    key: "addZero",
+    value: function addZero(i) {
+      if (i < 10) {
+        i = "0" + i;
+      }
+
+      return i;
+    }
+  }, {
     key: "newDate",
     value: function newDate() {
       var date = new Date();
       var yyyy = date.getFullYear();
       var mm = (date.getMonth() + 1 < 10 ? "0" : "") + (date.getMonth() + 1);
       var dd = (date.getDate() < 10 ? "0" : "") + date.getDate();
-      var today = "".concat(yyyy, "/").concat(mm, "/").concat(dd, "  ").concat(addZero(date.getHours()), ":").concat(addZero(date.getMinutes()), ":").concat(addZero(date.getSeconds()));
+      var today = "".concat(yyyy, "/").concat(mm, "/").concat(dd, "  ").concat(CreateData.addZero(date.getHours()), ":").concat(CreateData.addZero(date.getMinutes()), ":").concat(CreateData.addZero(date.getSeconds()));
       return today;
     }
   }, {
@@ -62,11 +63,21 @@ function () {
   _createClass(verification, null, [{
     key: "blank",
     value: function blank(elm, str) {
-      if (!$(elm).val()) {
-        new PNotify({
-          title: "\u8ACB\u8F38\u5165".concat(str)
-        });
-        return;
+      for (var i = 0; i < $("".concat(elm)).length; i++) {
+        var elmInput = document.querySelectorAll('input');
+
+        if (!elmInput[i].value) {
+          var pNotify = document.querySelectorAll('.ui-pnotify');
+
+          if (pNotify[i]) {
+            return;
+          } else {
+            new PNotify({
+              title: "\u8ACB\u8F38\u5165".concat(str[i])
+            });
+            return;
+          }
+        }
       }
     }
   }]);
