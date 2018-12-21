@@ -64,7 +64,7 @@ function () {
     key: "blank",
     value: function blank(elm, str) {
       for (var i = 0; i < $("".concat(elm)).length; i++) {
-        var elmInput = document.querySelectorAll('input');
+        var elmInput = document.querySelectorAll("".concat(elm));
 
         if (!elmInput[i].value) {
           var pNotify = document.querySelectorAll('.ui-pnotify');
@@ -73,7 +73,7 @@ function () {
             return;
           } else {
             new PNotify({
-              title: "\u8ACB\u8F38\u5165".concat(str[i])
+              title: "\u8ACB".concat(str[i])
             });
             return;
           }

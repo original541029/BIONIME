@@ -22,14 +22,14 @@ class CreateData {
 class verification {
   static blank(elm, str) {
     for (let i = 0; i < $(`${elm}`).length; i++) {
-      let elmInput = document.querySelectorAll('input');
+      let elmInput = document.querySelectorAll(`${elm}`);
       if (!elmInput[i].value) {
         let pNotify = document.querySelectorAll('.ui-pnotify')
         if (pNotify[i]) {
           return
         } else {
           new PNotify({
-            title: `請輸入${str[i]}`
+            title: `請${str[i]}`
           });
           return
         }

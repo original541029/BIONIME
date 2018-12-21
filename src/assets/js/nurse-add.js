@@ -16,10 +16,10 @@ function setSelectOption() {
   let dataLen = data.length;
   let objKeyDataLen = objKeyData.length;
   let str = ``;
-  str += ForLoops.selectArea(data, objKeyData, dataLen, objKeyDataLen, str,'','removeAll')
+  str += ForLoops.selectArea(data, objKeyData, dataLen, objKeyDataLen, str, '', 'removeAll')
 
   let addSelectArea = document.createElement('select');
-  addSelectArea.setAttribute('class', 'add-select-area')
+  addSelectArea.setAttribute('class', 'add-select-area require-option')
   addSelectArea.setAttribute('size', '8')
   let removeSelectArea = document.createElement('select');
   removeSelectArea.setAttribute('class', 'remove-select-area')
@@ -41,11 +41,25 @@ function setSelectOption() {
   ActEvent.clickBtn('.add-btn', '.add-select-area', '.remove-select-area', '.remove-select-area > option')
   ActEvent.clickBtn('.remove-btn', '.remove-select-area', '.add-select-area', '.add-select-area > option')
 }
+
 function addEvent() {
   let dataNurse = JSON.parse(localStorage.getItem("nurseList")) || [];
 
   $('.nurse-add-btn').click(() => {
-    verification.blank('input', ['員工編號','護士姓名']);
+    verification.blank('.require-option', ['輸入員工編號', '輸入護士姓名','加入站點']);
+    verification.blank('.add-select-area', ['加入站點']);
+    // if ($('.add-select-area>option').length == 0) {
+    //   let pNotify = document.querySelectorAll('.ui-pnotify')
+    //   if (pNotify[0]) {
+    //     return
+    //   } else {
+    //     new PNotify({
+    //       title: `請加入站點`
+    //     });
+    //     return
+    //   }
+
+    // }
     let addOpt = document.querySelectorAll('.add-select-area>option')
     const len = addOpt.length;
     console.log(data)
@@ -57,7 +71,7 @@ function addEvent() {
           加入時間: CreateData.newDate()
         }
       }
-      
+
       var updatedDate = Object.assign(data[addOpt[i].dataset.num], tempObj);
       dataNurse.push(updatedDate)
       localStorage.setItem("nurseList", JSON.stringify(dataNurse));

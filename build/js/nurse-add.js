@@ -18,7 +18,7 @@ function setSelectOption() {
   var str = "";
   str += ForLoops.selectArea(data, objKeyData, dataLen, objKeyDataLen, str, '', 'removeAll');
   var addSelectArea = document.createElement('select');
-  addSelectArea.setAttribute('class', 'add-select-area');
+  addSelectArea.setAttribute('class', 'add-select-area require-option');
   addSelectArea.setAttribute('size', '8');
   var removeSelectArea = document.createElement('select');
   removeSelectArea.setAttribute('class', 'remove-select-area');
@@ -44,7 +44,19 @@ function setSelectOption() {
 function addEvent() {
   var dataNurse = JSON.parse(localStorage.getItem("nurseList")) || [];
   $('.nurse-add-btn').click(function () {
-    verification.blank('input', ['員工編號', '護士姓名']);
+    verification.blank('.require-option', ['輸入員工編號', '輸入護士姓名', '加入站點']);
+    verification.blank('.add-select-area', ['加入站點']); // if ($('.add-select-area>option').length == 0) {
+    //   let pNotify = document.querySelectorAll('.ui-pnotify')
+    //   if (pNotify[0]) {
+    //     return
+    //   } else {
+    //     new PNotify({
+    //       title: `請加入站點`
+    //     });
+    //     return
+    //   }
+    // }
+
     var addOpt = document.querySelectorAll('.add-select-area>option');
     var len = addOpt.length;
     console.log(data);
