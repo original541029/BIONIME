@@ -32,7 +32,7 @@ function setSelectOption() {
   var removeBtn = document.createElement('button');
   removeBtn.setAttribute('type', 'button');
   removeBtn.innerText = '移除';
-  removeBtn.setAttribute('class', "btn btn-secondary remove-btn");
+  removeBtn.setAttribute('class', "btn btn-outline-secondary remove-btn");
   selectGroup.appendChild(addSelectArea);
   selectGroup.appendChild(addBtn);
   selectGroup.appendChild(removeBtn);

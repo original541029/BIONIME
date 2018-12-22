@@ -62,8 +62,29 @@ thead {
 .text-shadow-gray {
   text-shadow: 2px 2px gray; }
 
+.w-10 {
+  width: 10em; }
+
 body {
   font-family: Microsoft JhengHei; }
+
+.container {
+  height: 100vh;
+  max-width: 100%; }
+
+.hero {
+  background: url("http://all4desktop.com/data_images/original/4222091-hd-desktop-blue.jpg") no-repeat fixed;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
 
 .hero {
   background: url("http://all4desktop.com/data_images/original/4222091-hd-desktop-blue.jpg") no-repeat fixed;
@@ -82,7 +103,7 @@ body {
 .input-name {
   outline: 0.2em solid; }
 
-.input {
+.input-add {
   border-style: none;
   outline: 0.2em solid white; }
 
@@ -95,8 +116,5 @@ ul a {
 
 .link-group {
   max-width: 70%; }
-
-.container {
-  max-width: 100%; }
 
 /*# sourceMappingURL=site-add.css.map */

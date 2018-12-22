@@ -1,6 +1,16 @@
 @import 'mixin.scss';
-body{
-  // background: url('http://all4desktop.com/data_images/original/4222091-hd-desktop-blue.jpg')no-repeat  fixed;
-  // background-size: cover;
+
+body {
   font-family: Microsoft JhengHei;
+}
+.container{
+  height: 100vh;
+  max-width: 100%;
+}
+.hero {
+  background: url('http://all4desktop.com/data_images/original/4222091-hd-desktop-blue.jpg')no-repeat fixed;
+  background-size: cover;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
 }

@@ -62,7 +62,28 @@ thead {
 .text-shadow-gray {
   text-shadow: 2px 2px gray; }
 
+.w-10 {
+  width: 10em; }
+
 body {
   font-family: Microsoft JhengHei; }
+
+.container {
+  height: 100vh;
+  max-width: 100%; }
+
+.hero {
+  background: url("http://all4desktop.com/data_images/original/4222091-hd-desktop-blue.jpg") no-repeat fixed;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
 
 /*# sourceMappingURL=nurse-list.css.map */
