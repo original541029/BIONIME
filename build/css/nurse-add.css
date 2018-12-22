@@ -34,6 +34,15 @@
 .pt-10 {
   padding-top: 10em; }
 
+.font-6 {
+  font-size: 6em; }
+
+.font-8 {
+  font-size: 8em; }
+
+.pt-6 {
+  padding-top: 6em; }
+
 .table {
   background-color: #ffffff3b; }
 
@@ -47,9 +56,13 @@ thead {
 .table td, .table th {
   border-top: unset; }
 
+.text-orange-i {
+  color: #ff8c2b; }
+
+.text-shadow-gray {
+  text-shadow: 2px 2px gray; }
+
 body {
-  background: url("http://all4desktop.com/data_images/original/4222091-hd-desktop-blue.jpg") no-repeat fixed;
-  background-size: cover;
   font-family: Microsoft JhengHei; }
 
 body {

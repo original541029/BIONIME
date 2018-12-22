@@ -34,6 +34,15 @@
 .pt-10 {
   padding-top: 10em; }
 
+.font-6 {
+  font-size: 6em; }
+
+.font-8 {
+  font-size: 8em; }
+
+.pt-6 {
+  padding-top: 6em; }
+
 .table {
   background-color: #ffffff3b; }
 
@@ -47,10 +56,28 @@ thead {
 .table td, .table th {
   border-top: unset; }
 
+.text-orange-i {
+  color: #ff8c2b; }
+
+.text-shadow-gray {
+  text-shadow: 2px 2px gray; }
+
 body {
+  font-family: Microsoft JhengHei; }
+
+.hero {
   background: url("http://all4desktop.com/data_images/original/4222091-hd-desktop-blue.jpg") no-repeat fixed;
   background-size: cover;
-  font-family: Microsoft JhengHei; }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
 
 .input-name {
   outline: 0.2em solid; }
@@ -65,5 +92,11 @@ ul li {
 ul a {
   padding: 2em;
   margin: 2em; }
+
+.link-group {
+  max-width: 70%; }
+
+.container {
+  max-width: 100%; }
 
 /*# sourceMappingURL=site-add.css.map */

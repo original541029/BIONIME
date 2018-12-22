@@ -1,5 +1,11 @@
 @import 'all.scss';
-
+.hero{
+    background: url('http://all4desktop.com/data_images/original/4222091-hd-desktop-blue.jpg')no-repeat  fixed;
+  background-size: cover;
+  display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
 .input-name{
   outline: 0.2em solid;
 }
@@ -15,4 +21,11 @@ ul{
     padding: 2em;
     margin: 2em;
   }
+}
+.link-group{
+  max-width: 70%;
+}
+
+.container{
+  max-width: 100%;
 }
