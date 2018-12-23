@@ -19,24 +19,33 @@ function setSelectOption() {
   str += ForLoops.selectArea(data, objKeyData, dataLen, objKeyDataLen, str, '', 'removeAll')
 
   let addSelectArea = document.createElement('select');
-  addSelectArea.setAttribute('class', 'add-select-area border-transparent w-8');
+  addSelectArea.setAttribute('class', 'add-select-area  w-8');
   addSelectArea.setAttribute('size', '8')
   let removeSelectArea = document.createElement('select');
-  removeSelectArea.setAttribute('class', 'remove-select-area border-transparent w-8 ')
+  removeSelectArea.setAttribute('class', 'remove-select-area w-8 ')
   removeSelectArea.setAttribute('size', '8')
   removeSelectArea.innerHTML += str;
   let selectGroup = document.querySelector('.select-group');
-  let addBtn = document.createElement('button');
-  addBtn.setAttribute('type', 'button');
-  addBtn.setAttribute('class', "btn btn-primary add-btn");
-  addBtn.innerText = '加入';
-  let removeBtn = document.createElement('button');
-  removeBtn.setAttribute('type', 'button');
-  removeBtn.innerText = '移除';
-  removeBtn.setAttribute('class', "btn btn-outline-secondary remove-btn");
+
+  let addBtn = document.createElement('a');
+  addBtn.setAttribute('class', 'd-flex align-items-center')
+  addBtn.innerHTML=`<i class="fas fa-arrow-alt-circle-left text-secondary font-1_6 add-btn cursor-potion"></i>`
+
+  // let addBtn = document.createElement('button');
+  // addBtn.setAttribute('type', 'button');
+  // addBtn.setAttribute('class', "btn btn-primary add-btn");
+  // addBtn.innerText = '加入';
+  let removeBtn = document.createElement('div');
+  removeBtn.setAttribute('class', 'd-flex align-items-center mr-2')
+  removeBtn.innerHTML=`<i class="fas fa-arrow-alt-circle-right text-secondary font-1_6 remove-btn cursor-potion"></i>`
+
+  // let removeBtn = document.createElement('button');
+  // removeBtn.setAttribute('type', 'button');
+  // removeBtn.innerText = '移除';
+  // removeBtn.setAttribute('class', "btn btn-outline-secondary remove-btn");
   selectGroup.appendChild(addSelectArea);
-  selectGroup.appendChild(addBtn);
   selectGroup.appendChild(removeBtn);
+  selectGroup.appendChild(addBtn);
   selectGroup.appendChild(removeSelectArea);
   ActEvent.clickBtn('.add-btn', '.add-select-area', '.remove-select-area', '.remove-select-area > option')
   ActEvent.clickBtn('.remove-btn', '.remove-select-area', '.add-select-area', '.add-select-area > option')

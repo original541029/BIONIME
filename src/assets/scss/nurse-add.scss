@@ -1,26 +1,26 @@
-
 @import 'all.scss';
-input{
+
+input {
   border-style: none;
   border: 0.1em solid white;
   height: 3em;
 }
 
-// .card{
-//   border: 0.6em solid #57c1e8;
-// }
-.return-btn{
+.return-btn {
   position: absolute;
   z-index: 2;
-  top:0.2em;
+  top: 0.2em;
   right: 0.2em;
 }
-body{
+
+body {
   background-color: #5aa6f217;
 }
-.input-group-prepend{
-  label{
-    margin-top: 0.7em;
-  }
-  border: 0.2em solid white;
+
+.input-group-prepend {
+  border: 0.1em solid white;
+}
+
+i:active {
+  color: orange;
 }

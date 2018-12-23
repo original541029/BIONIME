@@ -7,11 +7,15 @@
     justify-content: center;
 }
 .input-name{
-  outline: 0.2em solid;
+  border: 0.2em solid;
+  border-top-right-radius: 1em;
+  border-top-left-radius: 1em;
+
 }
 .input-add{
   border-style: none;
-  outline: 0.2em solid white;
+  border-bottom-right-radius: 1em;
+  border-bottom-left-radius: 1em;
 }
 ul{
   li {

@@ -34,6 +34,7 @@ function addEvent() {
       new PNotify({
         title: "\u65B0\u589E\u6210\u529F"
       });
+      $('.input-add').val('');
     }
   });
 } // ----------------------------------------------
@@ -60,7 +61,7 @@ function table() {
   thead.setAttribute('class', 'bg-light-orange');
   var tbody = document.createElement('tbody');
   var table = document.createElement('table');
-  table.setAttribute('class', 'table table-condensed w-26');
+  table.setAttribute('class', 'table table-condensed w-26 border-orange');
   var tableArea = document.querySelector('.table-area');
   thead.innerHTML = strThead;
   tbody.innerHTML = strTbody;
