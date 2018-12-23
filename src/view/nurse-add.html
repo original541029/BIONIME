@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+    crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pnotify/3.2.1/pnotify.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
     crossorigin="anonymous">
@@ -18,20 +19,24 @@
 <body>
 
   <div class="container w-100">
-    <div class="row hero h-50 pb-4 pt-6 ">
+    <div class="row hero  pb-4 pt-6 ">
       <div class="logo w-100 text-center mb-4">
         <i class="fas fa-user-md text-orange-i font-6 text-shadow-gray"></i>
       </div>
       <button type="button" class="btn btn-primary return mr-1 return-btn">
         <a href="site-add.html" class="text-white">返回</a>
       </button>
+      <div class="input-area d-flex flex-column">
+        <div class="input-group-prepend d-flex justify-content-center">
+            <label class="text-white" for="員工編號">員工編號</label>
+          <input type="text" class="number require-option w-10">
+        </div>
+        <div class="input-group-prepend d-flex justify-content-center">
+            <label class="text-white" for="護士姓名">護士姓名</label>
+          <input type="text" class="nurse-name require-option w-10">
+        </div>
+      </div>
 
-      <div class="input-group-prepend d-flex justify-content-center">
-        <input type="text" class="number require-option bg-transparent w-10" placeholder="請輸入員工編號">
-      </div>
-      <div class="input-group-prepend d-flex justify-content-center">
-        <input type="text" class="nurse-name require-option bg-transparent w-10" placeholder="請輸入護士姓名">
-      </div>
     </div>
     <div class="row d-flex justify-content-center">
       <div class="card d-flex  flex-column bg-transparent">

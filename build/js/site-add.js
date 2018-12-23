@@ -57,9 +57,10 @@ function table() {
   var strTbody = '';
   strTbody += combinationElm.nestedLoops(data, objKeyData, dataLen, objKeyLen, strTbody);
   var thead = document.createElement('thead');
+  thead.setAttribute('class', 'bg-light-orange');
   var tbody = document.createElement('tbody');
   var table = document.createElement('table');
-  table.setAttribute('class', 'table');
+  table.setAttribute('class', 'table table-condensed w-26');
   var tableArea = document.querySelector('.table-area');
   thead.innerHTML = strThead;
   tbody.innerHTML = strTbody;
@@ -83,25 +84,18 @@ function removeRow() {
 
 function nurseView(name) {
   $('.model-table').remove();
-  $('.site-name').remove();
-  var elmSiteName = document.createElement('input');
-  elmSiteName.setAttribute('class', 'site-name');
-  elmSiteName.setAttribute('type', 'text');
-  elmSiteName.setAttribute('disabled', 'disabled');
-  elmSiteName.value = name;
-  var siteNameArea = document.querySelector('.site-name-area');
-  siteNameArea.appendChild(elmSiteName);
 
   if (nurseData == null) {
     return;
   }
 
-  var ary = ['員工編號', '加入時間'];
+  var ary = ['站點名稱', '員工編號', '加入時間'];
   var strThead = combinationElm.elmLoop(ary, 'tr', 'th');
   var objKeyData = Object.keys(nurseData[0]);
   var dataLen = nurseData.length;
   var objKeyLen = objKeyData.length;
   var strTbody = "<tr>";
+  strTbody += "<td>".concat(name, "</td>");
 
   for (var i = 0; i < dataLen; i++) {
     for (var j = 0; j < objKeyLen; j++) {
@@ -139,9 +133,11 @@ function nurseView(name) {
 
   var thead = document.createElement('thead');
   var tbody = document.createElement('tbody');
+  tbody.setAttribute('class', 'model-tbody');
   var table = document.createElement('table');
   table.setAttribute('class', 'table model-table');
   thead.innerHTML = strThead;
+  thead.setAttribute('class', 'model-thead');
   tbody.innerHTML = strTbody;
   table.appendChild(thead);
   table.appendChild(tbody);

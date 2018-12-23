@@ -58,9 +58,10 @@ function table() {
   strTbody += combinationElm.nestedLoops(data, objKeyData, dataLen, objKeyLen, strTbody)
 
   let thead = document.createElement('thead');
+  thead.setAttribute('class','bg-light-orange')
   let tbody = document.createElement('tbody');
   let table = document.createElement('table');
-  table.setAttribute('class', 'table')
+  table.setAttribute('class', 'table table-condensed w-26')
   let tableArea = document.querySelector('.table-area');
   thead.innerHTML = strThead;
   tbody.innerHTML = strTbody;
@@ -83,24 +84,17 @@ function removeRow() {
 
 function nurseView(name) {
   $('.model-table').remove();
-  $('.site-name').remove();
-  let elmSiteName = document.createElement('input');
-  elmSiteName.setAttribute('class', 'site-name');
-  elmSiteName.setAttribute('type', 'text');
-  elmSiteName.setAttribute('disabled', 'disabled');
-  elmSiteName.value = name;
-  let siteNameArea = document.querySelector('.site-name-area');
-  siteNameArea.appendChild(elmSiteName);
   if (nurseData == null) {
     return
   }
-  let ary = ['員工編號', '加入時間']
+  let ary = ['站點名稱','員工編號', '加入時間']
   let strThead = combinationElm.elmLoop(ary, 'tr', 'th');
   let objKeyData = Object.keys(nurseData[0])
   const dataLen = nurseData.length;
   const objKeyLen = objKeyData.length;
 
   let strTbody = `<tr>`;
+  strTbody+=`<td>${name}</td>`
   for (let i = 0; i < dataLen; i++) {
 
     for (let j = 0; j < objKeyLen; j++) {
@@ -142,9 +136,11 @@ function nurseView(name) {
 
   let thead = document.createElement('thead');
   let tbody = document.createElement('tbody');
+  tbody.setAttribute('class', 'model-tbody')
   let table = document.createElement('table');
   table.setAttribute('class', 'table model-table')
   thead.innerHTML = strThead;
+  thead.setAttribute('class', 'model-thead')
   tbody.innerHTML = strTbody;
   table.appendChild(thead);
   table.appendChild(tbody);

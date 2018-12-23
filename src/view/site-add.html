@@ -18,13 +18,18 @@
 
 <body>
   <div class="container w-100">
-    <div class="row hero h-50 pb-4 pt-6">
+    <div class="row hero pt-5 d-flex flex-column pb-3">
       <div class="logo w-100 text-center mb-4">
         <i class="fas fa-hospital text-orange-i font-6 text-shadow-gray"></i>
       </div>
       <div class="input-group mx-auto d-flex flex-column w-30">
         <span class="input-name text-white text-center pt-2 pb-2 font-weight-bold">請新增站點名稱</span>
         <input class="input-add p-3" type="text">
+      </div>
+      <div class="btn-group nurse-btn mx-auto mt-3" role="group" aria-label="Basic example">
+        <a  type="button" class="btn btn-secondary w-9" href="nurse-add.html"><i class="fas fa-user-md mr-2"></i>新增站點護士</a>
+        <a type="button" class="btn btn-secondary w-9"  href="nurse-list.html"><i class="fas fa-list mr-2"></i>站點護士列表</a>
+
       </div>
     </div>
 
@@ -56,10 +61,6 @@
 
             <!-- Modal body -->
             <div class="modal-body">
-              <div class="input-group-prepend site-name-area">
-                <span class="input-group-text" id="basic-addon1">站點名稱</span>
-                <input type="text" class="site-name" disabled="disabled">
-              </div>
             </div>
 
 

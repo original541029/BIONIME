@@ -18,3 +18,9 @@ input{
 body{
   background-color: #5aa6f217;
 }
+.input-group-prepend{
+  label{
+    margin-top: 0.7em;
+  }
+  border: 0.2em solid white;
+}
