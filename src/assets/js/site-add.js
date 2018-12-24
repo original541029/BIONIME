@@ -5,6 +5,9 @@ window.onload = function () {
 
 function addEvent() {
   $('.site-add-btn').click(() => {
+    if($('.input-add').val()==""){
+      return
+    }
     verification.blank('.input-add', [`輸入站點名稱`])
     let tempObj = {
       name: $('.input-add').val(),
@@ -25,6 +28,9 @@ function addEvent() {
   })
   $('.input-add').keyup(() => {
     if (event.keyCode === 13) {
+      if($('.input-add').val()==""){
+        return
+      }
       verification.blank('.input-add', [`輸入站點名稱`])
       let tempObj = {
         name: $('.input-add').val(),
@@ -97,6 +103,7 @@ function nurseView(name) {
   if (nurseData == []) {
     return
   }
+
   let ary = ['站點名稱','員工編號', '加入時間']
   let strThead = combinationElm.elmLoop(ary, 'tr', 'th');
   let objKeyData = Object.keys(nurseData[0])
@@ -120,7 +127,9 @@ function nurseView(name) {
           let obj = Object.keys(nurseData[i][objKeyData[j]]);
           const objLen = obj.length;
           for (let k = 0; k < objLen; k++) {
+
             if (k != 1) {
+              console.log(nurseData)
               strTbody += `<td>${nurseData[i][objKeyData[j]][obj[k]]}</td>`
             }
           }

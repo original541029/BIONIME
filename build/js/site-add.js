@@ -7,6 +7,10 @@ window.onload = function () {
 
 function addEvent() {
   $('.site-add-btn').click(function () {
+    if ($('.input-add').val() == "") {
+      return;
+    }
+
     verification.blank('.input-add', ["\u8F38\u5165\u7AD9\u9EDE\u540D\u7A31"]);
     var tempObj = {
       name: $('.input-add').val(),
@@ -28,6 +32,10 @@ function addEvent() {
   });
   $('.input-add').keyup(function () {
     if (event.keyCode === 13) {
+      if ($('.input-add').val() == "") {
+        return;
+      }
+
       verification.blank('.input-add', ["\u8F38\u5165\u7AD9\u9EDE\u540D\u7A31"]);
       var tempObj = {
         name: $('.input-add').val(),
@@ -123,6 +131,7 @@ function nurseView(name) {
 
           for (var k = 0; k < objLen; k++) {
             if (k != 1) {
+              console.log(nurseData);
               strTbody += "<td>".concat(nurseData[i][objKeyData[j]][obj[k]], "</td>");
             }
           }
