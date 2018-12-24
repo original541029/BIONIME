@@ -53,9 +53,11 @@ function table() {
   }
 
   var thead = document.createElement('thead');
+  thead.setAttribute('class', 'bg-light-orange');
   var tbody = document.createElement('tbody');
   var table = document.createElement('table');
   table.setAttribute('class', 'table');
+  table.setAttribute('class', 'table table-condensed w-38 border-orange');
   var tableArea = document.querySelector('.table-area');
   thead.innerHTML = strThead;
   tbody.innerHTML = strTbody;

@@ -1,18 +1,16 @@
 @import 'all.scss';
-
 input {
   border-style: none;
   border: 0.1em solid white;
   height: 3em;
 }
 
-.return-btn {
-  position: absolute;
-  z-index: 2;
-  top: 0.2em;
-  right: 0.2em;
-}
-
+// .return-btn {
+//   position: absolute;
+//   z-index: 2;
+//   top: 0.2em;
+//   right: 0.2em;
+// }
 body {
   background-color: #5aa6f217;
 }
@@ -23,4 +21,26 @@ body {
 
 i:active {
   color: orange;
+}
+
+.select-group {
+  margin-top: 2em;
+  position: relative;
+  &::before,&::after{
+    position: absolute;
+    z-index: 2;
+    background-color: #47607691;
+    color: white;
+    text-align: center;
+    width: 40%;
+    top: -1.4em;
+  } 
+  &::before {
+    content: '加入站點';
+    left: 0.1em;
+  }
+  &::after {
+    content: '移除站點'; 
+    right: 0.1em;
+  }
 }

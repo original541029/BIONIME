@@ -61,7 +61,7 @@ function table() {
   thead.setAttribute('class','bg-light-orange')
   let tbody = document.createElement('tbody');
   let table = document.createElement('table');
-  table.setAttribute('class', 'table table-condensed w-26 border-orange')
+  table.setAttribute('class', 'table table-condensed w-38 border-orange')
   let tableArea = document.querySelector('.table-area');
   thead.innerHTML = strThead;
   tbody.innerHTML = strTbody;
