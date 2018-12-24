@@ -128,3 +128,24 @@ thead {
 .border-orange{
   border: 0.2em solid #ffb271;
 }
+.select-group {
+  margin-top: 2em;
+  position: relative;
+  &::before,&::after{
+    position: absolute;
+    z-index: 2;
+    background-color: #47607691;
+    color: white;
+    text-align: center;
+    width: 40%;
+    top: -1.4em;
+  } 
+  &::before {
+    content: '加入站點';
+    left: 0.1em;
+  }
+  &::after {
+    content: '移除站點'; 
+    right: 0.1em;
+  }
+}

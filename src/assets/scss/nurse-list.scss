@@ -1,1 +1,34 @@
-@import 'all.scss'
+@import 'all.scss';
+.select-group {
+  &::before,&::after{
+    background-color: #ffb271;
+  color:black;
+    width: 28%;
+  } 
+  &::before {
+    content: '加入站點';
+    left: 4.6em;
+  }
+  &::after {
+    content: '移除站點'; 
+    right: 4.6em;
+  }
+}
+.input-group-text,.modal-input{
+  background-color: unset!important;
+  border-radius: unset;
+  border-color: gray;
+}
+.number-title{
+  border-top-left-radius: .25em;
+}   
+.number{
+  border-top-right-radius: .25em;
+}
+.nurse-name-title{
+  border-bottom-left-radius: .25em;
+}
+.nurse-name{
+  border-bottom-right-radius: .25em;
+}
+

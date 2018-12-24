@@ -27,11 +27,7 @@ function setSelectOption() {
   var selectGroup = document.querySelector('.select-group');
   var addBtn = document.createElement('a');
   addBtn.setAttribute('class', 'd-flex align-items-center');
-  addBtn.innerHTML = "<i class=\"fas fa-arrow-alt-circle-left text-secondary font-1_6 add-btn cursor-potion\"></i>"; // let addBtn = document.createElement('button');
-  // addBtn.setAttribute('type', 'button');
-  // addBtn.setAttribute('class', "btn btn-primary add-btn");
-  // addBtn.innerText = '加入';
-
+  addBtn.innerHTML = "<i class=\"fas fa-arrow-alt-circle-left text-secondary font-1_6 add-btn cursor-potion\"></i>";
   var removeBtn = document.createElement('div');
   removeBtn.setAttribute('class', 'd-flex align-items-center mr-2');
   removeBtn.innerHTML = "<i class=\"fas fa-arrow-alt-circle-right text-secondary font-1_6 remove-btn cursor-potion\"></i>"; // let removeBtn = document.createElement('button');

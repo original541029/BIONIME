@@ -41,20 +41,19 @@
 
         <!-- Modal body -->
         <div class="modal-body">
-          <div class="btn-group d-flex justify-content-end">
-            <button type="button" class="btn btn-primary save-btn">儲存</button>
+          <div class="input-group-prepend mx-auto w-20">
+            <span class="input-group-text text-white number-title">員工編號</span>
+            <input type="text" class="form-control number modal-input text-white" disabled="disabled">
           </div>
-
-          <div class="input-group-prepend">
-            <span class="input-group-text">員工編號</span>
-            <input type="text" class="form-control number " disabled="disabled">
+          <div class="input-group-prepend mx-auto w-20">
+            <span class="input-group-text text-white nurse-name-title">護士姓名</span>
+            <input type="text" class="form-control  nurse-name modal-input text-white" disabled="disabled">
           </div>
-          <div class="input-group-prepend">
-            <span class="input-group-text">護士姓名</span>
-            <input type="text" class="form-control  nurse-name" disabled="disabled">
-          </div>
-          <form class="select-group">
+          <form class="select-group d-flex justify-content-center">
           </form>
+          <div class="btn-area mx-auto d-flex flex-wrap w-20">
+            <button type="button" class="text-center btn bg-light-orange save-btn w-100">儲存</button>
+          </div>
         </div>
 
 
