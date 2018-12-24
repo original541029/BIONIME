@@ -6,6 +6,13 @@ window.onload = function () {
 function addEvent() {
   $('.site-add-btn').click(() => {
     if($('.input-add').val()==""){
+      let pNotify = document.querySelectorAll('.ui-pnotify')
+      if (pNotify[0]) {
+        return
+      }
+      new PNotify({
+        title: `輸入站點名稱`
+      });
       return
     }
     verification.blank('.input-add', [`輸入站點名稱`])
@@ -29,9 +36,15 @@ function addEvent() {
   $('.input-add').keyup(() => {
     if (event.keyCode === 13) {
       if($('.input-add').val()==""){
+        let pNotify = document.querySelectorAll('.ui-pnotify')
+        if (pNotify[0]) {
+          return
+        }
+        new PNotify({
+          title: `輸入站點名稱`
+        });
         return
       }
-      verification.blank('.input-add', [`輸入站點名稱`])
       let tempObj = {
         name: $('.input-add').val(),
         date: CreateData.newDate()

@@ -8,6 +8,15 @@ window.onload = function () {
 function addEvent() {
   $('.site-add-btn').click(function () {
     if ($('.input-add').val() == "") {
+      var _pNotify = document.querySelectorAll('.ui-pnotify');
+
+      if (_pNotify[0]) {
+        return;
+      }
+
+      new PNotify({
+        title: "\u8F38\u5165\u7AD9\u9EDE\u540D\u7A31"
+      });
       return;
     }
 
@@ -33,10 +42,18 @@ function addEvent() {
   $('.input-add').keyup(function () {
     if (event.keyCode === 13) {
       if ($('.input-add').val() == "") {
+        var _pNotify2 = document.querySelectorAll('.ui-pnotify');
+
+        if (_pNotify2[0]) {
+          return;
+        }
+
+        new PNotify({
+          title: "\u8F38\u5165\u7AD9\u9EDE\u540D\u7A31"
+        });
         return;
       }
 
-      verification.blank('.input-add', ["\u8F38\u5165\u7AD9\u9EDE\u540D\u7A31"]);
       var tempObj = {
         name: $('.input-add').val(),
         date: CreateData.newDate()
