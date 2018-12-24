@@ -83,7 +83,7 @@ thead {
   width: 20em; }
 
 .w-19 {
-  width: 19.8em; }
+  width: 19.7em; }
 
 .border-radius-1 {
   border-radius: 0.2em; }
@@ -93,6 +93,9 @@ thead {
 
 .w-26 {
   width: 26em; }
+
+.wm-100 {
+  max-width: 100%; }
 
 .model-thead {
   background-color: #ffc695; }
@@ -130,7 +133,6 @@ body {
   font-family: Microsoft JhengHei; }
 
 .container {
-  height: 100vh;
   max-width: 100%; }
 
 .hero {

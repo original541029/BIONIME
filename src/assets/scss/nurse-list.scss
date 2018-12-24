@@ -3,15 +3,15 @@
   &::before,&::after{
     background-color: #ffb271;
   color:black;
-    width: 28%;
+    width: 8em;
   } 
   &::before {
     content: '加入站點';
-    left: 4.6em;
+    left: 4.7em;
   }
   &::after {
     content: '移除站點'; 
-    right: 4.6em;
+    right: 4.7em;
   }
 }
 .input-group-text,.modal-input{
@@ -34,4 +34,18 @@
 
 .add-select-area,.remove-select-area{
   border: 0.2em solid #ffb271;
+}
+.return{
+  position: absolute;
+  z-index: 10;
+  right: 1em;
+  bottom: 1em;
+}
+.btn-area{
+  button{
+    border-radius: unset;
+    border-bottom-left-radius: .25em;
+    border-bottom-right-radius: .25em;
+  }
+
 }

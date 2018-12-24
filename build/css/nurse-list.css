@@ -83,7 +83,7 @@ thead {
   width: 20em; }
 
 .w-19 {
-  width: 19.8em; }
+  width: 19.7em; }
 
 .border-radius-1 {
   border-radius: 0.2em; }
@@ -93,6 +93,9 @@ thead {
 
 .w-26 {
   width: 26em; }
+
+.wm-100 {
+  max-width: 100%; }
 
 .model-thead {
   background-color: #ffc695; }
@@ -130,7 +133,6 @@ body {
   font-family: Microsoft JhengHei; }
 
 .container {
-  height: 100vh;
   max-width: 100%; }
 
 .hero {
@@ -166,15 +168,15 @@ body {
 .select-group::before, .select-group::after {
   background-color: #ffb271;
   color: black;
-  width: 28%; }
+  width: 8em; }
 
 .select-group::before {
   content: '加入站點';
-  left: 4.6em; }
+  left: 4.7em; }
 
 .select-group::after {
   content: '移除站點';
-  right: 4.6em; }
+  right: 4.7em; }
 
 .input-group-text, .modal-input {
   border-radius: unset;
@@ -195,5 +197,16 @@ body {
 
 .add-select-area, .remove-select-area {
   border: 0.2em solid #ffb271; }
+
+.return {
+  position: absolute;
+  z-index: 10;
+  right: 1em;
+  bottom: 1em; }
+
+.btn-area button {
+  border-radius: unset;
+  border-bottom-left-radius: .25em;
+  border-bottom-right-radius: .25em; }
 
 /*# sourceMappingURL=nurse-list.css.map */
