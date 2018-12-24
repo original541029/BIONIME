@@ -83,8 +83,8 @@ function removeRow() {
 function nurseView(obj) {
   $('.remove-select-area').remove();
   $('.add-select-area').remove();
-  $('.add-btn').remove();
-  $('.remove-btn').remove();
+  $('.add-btn-area').remove();
+  $('.remove-btn-area').remove();
   console.log(obj["siteName"]);
   $('#myModal').modal('show');
   $('.number').val(obj["員工編號"]);
@@ -112,10 +112,10 @@ function nurseView(obj) {
   removeSelectArea.innerHTML += str;
   var selectGroup = document.querySelector('.select-group');
   var addBtn = document.createElement('a');
-  addBtn.setAttribute('class', 'd-flex align-items-center');
+  addBtn.setAttribute('class', 'd-flex align-items-center add-btn-area');
   addBtn.innerHTML = "<i class=\"fas fa-arrow-alt-circle-left font-1_6 add-btn text-white cursor-potion\"></i>";
   var removeBtn = document.createElement('div');
-  removeBtn.setAttribute('class', 'd-flex align-items-center mr-2');
+  removeBtn.setAttribute('class', 'd-flex align-items-center remove-btn-area mr-2');
   removeBtn.innerHTML = "<i class=\"fas fa-arrow-alt-circle-right font-1_6 remove-btn text-white cursor-potion\"></i>";
   selectGroup.appendChild(addSelectArea);
   selectGroup.appendChild(removeBtn);
@@ -137,7 +137,11 @@ function addEvent(num) {
     table();
     var pNotify = document.querySelectorAll('.ui-pnotify');
 
-    if (pNotify[0] || initData == $('.add-select-area>option').text()) {
+    if (initData == $('.add-select-area>option').text()) {
+      return;
+    }
+
+    if (pNotify[0]) {
       return;
     } else {
       new PNotify({

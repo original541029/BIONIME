@@ -15,9 +15,9 @@
   }
 }
 .input-group-text,.modal-input{
-  background-color: unset!important;
   border-radius: unset;
-  border-color: gray;
+  background-color: #161e2675!important;
+  border-color: #ffb271;
 }
 .number-title{
   border-top-left-radius: .25em;
@@ -32,3 +32,6 @@
   border-bottom-right-radius: .25em;
 }
 
+.add-select-area,.remove-select-area{
+  border: 0.2em solid #ffb271;
+}
