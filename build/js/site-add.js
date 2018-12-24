@@ -51,13 +51,13 @@ function addEvent() {
 } // ----------------------------------------------
 
 
-var data = JSON.parse(localStorage.getItem("siteList")) || null;
-var nurseData = JSON.parse(localStorage.getItem("nurseList")) || null;
+var data = JSON.parse(localStorage.getItem("siteList")) || [];
+var nurseData = JSON.parse(localStorage.getItem("nurseList")) || [];
 
 function table() {
   $('.table').remove();
 
-  if (data == null) {
+  if (data == []) {
     return;
   }
 
@@ -97,7 +97,7 @@ function removeRow() {
 function nurseView(name) {
   $('.model-table').remove();
 
-  if (nurseData == null) {
+  if (nurseData == []) {
     return;
   }
 

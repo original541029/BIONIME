@@ -49,12 +49,12 @@ function addEvent() {
 
 // ----------------------------------------------
 
-let data = JSON.parse(localStorage.getItem("siteList")) || null;
-let nurseData = JSON.parse(localStorage.getItem("nurseList")) || null;
+let data = JSON.parse(localStorage.getItem("siteList")) || [];
+let nurseData = JSON.parse(localStorage.getItem("nurseList")) || [];
 
 function table() {
   $('.table').remove();
-  if (data == null) {
+  if (data == []) {
     return
   }
   let aryHead = ['站點', '修改時間', '動作'];
@@ -94,7 +94,7 @@ function removeRow() {
 
 function nurseView(name) {
   $('.model-table').remove();
-  if (nurseData == null) {
+  if (nurseData == []) {
     return
   }
   let ary = ['站點名稱','員工編號', '加入時間']
