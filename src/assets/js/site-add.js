@@ -15,7 +15,6 @@ function addEvent() {
       });
       return
     }
-    verification.blank('.input-add', [`輸入站點名稱`])
     let tempObj = {
       name: $('.input-add').val(),
       date: CreateData.newDate()

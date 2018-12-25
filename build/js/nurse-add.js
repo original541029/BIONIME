@@ -86,7 +86,7 @@ function addEvent() {
       new PNotify({
         title: "\u65B0\u589E\u6210\u529F"
       });
-      console.log(updatedDate);
+      $('.number').val(''), $('.nurse-name').val(''), console.log(updatedDate);
     }
   });
 }

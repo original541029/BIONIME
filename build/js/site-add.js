@@ -20,7 +20,6 @@ function addEvent() {
       return;
     }
 
-    verification.blank('.input-add', ["\u8F38\u5165\u7AD9\u9EDE\u540D\u7A31"]);
     var tempObj = {
       name: $('.input-add').val(),
       date: CreateData.newDate()

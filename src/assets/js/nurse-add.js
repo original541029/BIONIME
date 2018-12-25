@@ -88,6 +88,8 @@ function addEvent() {
       new PNotify({
         title: `新增成功`
       });
+      $('.number').val(''),
+      $('.nurse-name').val(''),
       console.log(updatedDate)
     }
 
