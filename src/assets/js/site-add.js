@@ -123,7 +123,7 @@ function nurseView(name) {
   const objKeyLen = objKeyData.length;
 
   let strTbody = `<tr>`;
-  strTbody+=`<td>${name}</td>`
+
   for (let i = 0; i < dataLen; i++) {
 
     for (let j = 0; j < objKeyLen; j++) {
@@ -132,6 +132,7 @@ function nurseView(name) {
       
         let siteName = nurseData[i][objKeyData[0]];
         if (siteName == name) {
+          strTbody+=`<td>${name}</td>`
           console.log(siteName)
           console.log(i)
           $('#myModal').modal('show')

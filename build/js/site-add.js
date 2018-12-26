@@ -131,7 +131,6 @@ function nurseView(name) {
   var dataLen = nurseData.length;
   var objKeyLen = objKeyData.length;
   var strTbody = "<tr>";
-  strTbody += "<td>".concat(name, "</td>");
 
   for (var i = 0; i < dataLen; i++) {
     for (var j = 0; j < objKeyLen; j++) {
@@ -139,6 +138,7 @@ function nurseView(name) {
         var siteName = nurseData[i][objKeyData[0]];
 
         if (siteName == name) {
+          strTbody += "<td>".concat(name, "</td>");
           console.log(siteName);
           console.log(i);
           $('#myModal').modal('show');
